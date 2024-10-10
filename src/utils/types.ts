@@ -71,4 +71,28 @@ export interface produkProps {
   category: string;
   discount: string;
   slug: string;
+  details: string;
+  stock: number;
+  size: string;
+  slider: {
+    url: string;
+    width: string;
+    height: string;
+  };
+  content: BlockTypeDetails[];
+}
+
+export type BlockTypeDetails = {
+  type: "image" | "paragraph" | "heading" | "list" | "quote";
+  image?: {
+    url: string;
+    name: string;
+    width?: number;
+    height?: number;
+  };
+  children?: { text: string }[];
+};
+
+export interface ContentRendererDetailsProps {
+  block: BlockTypeDetails;
 }

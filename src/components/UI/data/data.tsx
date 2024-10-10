@@ -70,6 +70,7 @@ export const megaMenu = [
       {
         id: 1,
         name: "Comming Soon",
+        title: "Comming Soon",
         path: "",
         img: img1,
         icons: <History />
@@ -78,6 +79,7 @@ export const megaMenu = [
       {
         id: 2,
         name: "Comming Soon",
+        title: "Comming Soon",
         path: "",
         img: img2,
         icons: <History />
@@ -86,6 +88,7 @@ export const megaMenu = [
       {
         id: 3,
         name: "Comming Soon",
+        title: "Comming Soon",
         path: "",
         img: img3,
         icons: <History />
