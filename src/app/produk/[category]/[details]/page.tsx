@@ -46,22 +46,27 @@ export default function ProdukDetails() {
                                             <input type='text' value={item.title} readOnly />
                                         </div>
 
+                                        <div className="stock">
+                                            <h4>Stock:</h4>
+                                            <input type='text' value={item.stock} readOnly />
+                                        </div>
+
                                         <div className="price">
-                                            <label>Rp <input type='number' value={item.discount} readOnly /></label>
-                                            <h3><del>Rp. {item.price}</del></h3>
+                                            <label>Rp. <input type='number' value={item.discount} readOnly /></label>
+                                            <span><del>Rp. {item.price}</del></span>
                                         </div>
 
                                         <div className="size">
                                             <h4>Select Size:</h4>
-                                            <ul>
+                                            <div className='box__list'>
                                                 {Array.isArray(item.size.sizes) ? (
                                                     item.size.sizes.map((sizeOption: { size: string }, index: number) => (
-                                                        <li key={index}>{sizeOption.size}</li>
+                                                        <input type="text" key={index} value={sizeOption.size} readOnly />
                                                     ))
                                                 ) : (
                                                     <li>No sizes available</li>
                                                 )}
-                                            </ul>
+                                            </div>
                                         </div>
 
 
