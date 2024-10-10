@@ -425,65 +425,101 @@
     .produkDetails__container {
         padding: 1rem 2%;
 
-        .box {
-            .swiper {
-                width: 100%;
+        .content {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+
+            .swipper__content {
+                width: 50%;
                 height: 100%;
+                display: flex;
+                flex-direction: column;
 
-                .swiper-slide {
-                    text-align: center;
-                    font-size: 18px;
-                    background: #fff;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    img {
-                        display: block;
-                        width: 100%;
-                        height: 500px;
-                        object-fit: cover;
-                    }
-                }
-            }
-
-            .swiper {
-                width: 100%;
-                height: 300px;
-                margin-left: auto;
-                margin-right: auto;
-
-                .swiper-slide {
-                    background-size: cover;
-                    background-position: center;
-                }
-            }
-
-            .mySwiper2 {
-                height: 80%;
-                width: 100%;
-            }
-
-            .mySwiper {
-                height: 20%;
-                box-sizing: border-box;
-                padding: 10px 0;
-
-                .swiper-slide {
-                    width: 25%;
+                .swiper {
+                    width: 100%;
                     height: 100%;
-                    opacity: 0.4;
+                    margin-bottom: 2rem;
 
-                    img {
-                        display: block;
+                    .swiper-slide {
+                        display: flex;
                         width: 100%;
                         height: 100%;
-                        object-fit: cover;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
                     }
                 }
 
-                .swiper-slide-thumb-active {
-                    opacity: 1;
+                .swiper {
+                    width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+
+                    .swiper-slide {
+                        background-size: cover;
+                        background-position: center;
+                    }
+                }
+
+                .priview {
+                    width: 100%;
+                    height: 100%;
+
+                    .swiper-slide {
+                        display: grid;
+                        place-items: center;
+
+                        img {
+                            width: 500px;
+                            height: 500px;
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+                .mySwiper {
+                    height: 100%;
+                    box-sizing: border-box;
+                    padding: 10px 0;
+
+                    .swiper-slide {
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0.4;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .swiper-slide-thumb-active {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .form {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                .title {
+                    display: flex;
+                    margin-bottom: 1rem;
+
+                    input {
+                        background-color: transparent;
+                        border: none;
+                        color: $text-c;
+                        font-size: 2rem;
+                        letter-spacing: 2px;
+                    }
                 }
             }
         }

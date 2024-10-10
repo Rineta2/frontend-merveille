@@ -1,10 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { FreeMode, Thumbs } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
 import Image from 'next/image';
@@ -14,6 +13,7 @@ import { baseUrl } from '@/utils/config';
 import { produkProps } from "@/utils/types";
 
 import type { Swiper as SwiperType } from 'swiper';
+import { Fragment } from 'react';
 
 interface SwiperSliderProps {
     slider: produkProps['slider'];
@@ -22,13 +22,13 @@ interface SwiperSliderProps {
 }
 
 export const SwiperSlider = ({ slider, setThumbsSwiper, thumbsSwiper }: SwiperSliderProps) => (
-    <>
+    <Fragment>
         <Swiper
-            className="mySwiper2"
+            className="priview"
             spaceBetween={10}
             navigation={true}
             thumbs={{ swiper: thumbsSwiper }}
-            modules={[FreeMode, Navigation, Thumbs]}
+            modules={[FreeMode, Thumbs]}
         >
             {(Array.isArray(slider) ? slider : []).map((sliderItem) => (
                 <SwiperSlide key={sliderItem.id}>
@@ -50,7 +50,7 @@ export const SwiperSlider = ({ slider, setThumbsSwiper, thumbsSwiper }: SwiperSl
             slidesPerView={4}
             freeMode={true}
             watchSlidesProgress={true}
-            modules={[FreeMode, Navigation, Thumbs]}
+            modules={[FreeMode, Thumbs]}
             className="mySwiper"
         >
             {(Array.isArray(slider) ? slider : []).map((sliderItem) => (
@@ -66,5 +66,5 @@ export const SwiperSlider = ({ slider, setThumbsSwiper, thumbsSwiper }: SwiperSl
                 </SwiperSlide>
             ))}
         </Swiper>
-    </>
+    </Fragment>
 );

@@ -73,7 +73,12 @@ export interface produkProps {
   slug: string;
   details: string;
   stock: number;
-  size: string;
+  size: {
+    sizes: {
+      name: string;
+      value: string;
+    };
+  };
   slider: {
     url: string;
     width: string;

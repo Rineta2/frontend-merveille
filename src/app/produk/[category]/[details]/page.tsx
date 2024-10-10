@@ -25,16 +25,61 @@ export default function ProdukDetails() {
     return (
         <section className='product__details'>
             <div className="produkDetails__container container">
-                {details.map((item) => (
-                    <div className="box" key={item.id}>
-                        <SwiperSlider
-                            slider={item.slider}
-                            setThumbsSwiper={setThumbsSwiper}
-                            thumbsSwiper={thumbsSwiper}
-                        />
+                <div className="content">
+                    {details.map((item) => (
+                        <div className="swipper__content" key={item.id}>
+                            <SwiperSlider
+                                slider={item.slider}
+                                setThumbsSwiper={setThumbsSwiper}
+                                thumbsSwiper={thumbsSwiper}
+                            />
+                        </div>
+                    ))}
+
+                    <div className="form">
+                        {
+                            details.map((item) => {
+                                return (
+                                    <form className="box" key={item.id} method="post'">
+
+                                        <div className="title">
+                                            <input type='text' value={item.title} readOnly />
+                                        </div>
+
+                                        <div className="price">
+                                            <label>Rp <input type='number' value={item.discount} readOnly /></label>
+                                            <h3><del>Rp. {item.price}</del></h3>
+                                        </div>
+
+                                        <div className="size">
+                                            <h4>Select Size:</h4>
+                                            <ul>
+                                                {Array.isArray(item.size.sizes) ? (
+                                                    item.size.sizes.map((sizeOption: { size: string }, index: number) => (
+                                                        <li key={index}>{sizeOption.size}</li>
+                                                    ))
+                                                ) : (
+                                                    <li>No sizes available</li>
+                                                )}
+                                            </ul>
+                                        </div>
+
+
+                                        <div className="quantity">
+                                            <label>Quantity</label>
+                                            <input type="number" min={1} max={item.stock} defaultValue={1} />
+                                        </div>
+
+                                        <div className="btn">
+                                            <button type='submit'>Add to cart</button>
+                                        </div>
+                                    </form>
+                                )
+                            })
+                        }
                     </div>
-                ))}
-            </div>
-        </section>
+                </div>
+            </div >
+        </section >
     );
 }
